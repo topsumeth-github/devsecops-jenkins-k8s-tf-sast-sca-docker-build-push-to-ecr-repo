@@ -6,7 +6,7 @@ pipeline {
    stages{
     stage('CompileandRunSonarAnalysis') {
             steps {	
-		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=topsumethwepapp -Dsonar.organization=topsumethwepapp -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=d7edfd80bef8e61d8d87cd36beaa7ee330a38510'
+		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=topsumethwebapp -Dsonar.organization=topsumethwebapp -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=d7edfd80bef8e61d8d87cd36beaa7ee330a38510'
 			}
     }
 
@@ -16,7 +16,7 @@ pipeline {
 					sh 'mvn snyk:test -fn'
 				}
 			}
-    }
+    }		
 
 	stage('Build') { 
             steps { 
